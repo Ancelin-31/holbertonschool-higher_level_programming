@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 
 for i in range(99):
-    print(f'{i:d} = 0x{i:x}', end="\n")
+    print('{:d} = 0x{:x}'.format(i, i), end="\n")
