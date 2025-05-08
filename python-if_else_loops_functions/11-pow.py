@@ -11,4 +11,5 @@ def pow(a, b):
         for _ in range(b):
             result *= a
 
-    return result
+    simplified_result = "{:.15e}".format(result)
+    return simplified_result
