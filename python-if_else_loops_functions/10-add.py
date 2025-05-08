@@ -2,5 +2,6 @@
 
 def add(a, b):
 
-    result = a + b
-    return sum
+    numbers = [a, b]
+    result = sum(numbers)
+    return result
