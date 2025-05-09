@@ -2,14 +2,6 @@
 
 def pow(a, b):
 
-    result = 1
-    if b < 0:
-        for _ in range(-b):
-            result /= a
+    result = a ** b
 
-    else:
-        for _ in range(b):
-            result *= a
-
-    simplified_result = "{:.15e}".format(result)
-    return simplified_result
+    return result
