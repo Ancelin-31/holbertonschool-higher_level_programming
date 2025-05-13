@@ -1,0 +1,1 @@
+This is the python project concerning the functions reduce, filter, map and lambda
