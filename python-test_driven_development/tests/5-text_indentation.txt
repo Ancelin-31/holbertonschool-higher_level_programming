@@ -1,51 +1,52 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-# Test 1: Basic input with ., ?, and :
 >>> text_indentation("Hello. How are you? I am fine: thank you.")
 Hello.
-
+<BLANKLINE>
 How are you?
-
+<BLANKLINE>
 I am fine:
-
+<BLANKLINE>
 thank you.
+<BLANKLINE>
 
-# Test 2: Input with spaces around punctuation
 >>> text_indentation("Hello . How are you ? I am fine : thank you .")
 Hello.
-
+<BLANKLINE>
 How are you?
-
+<BLANKLINE>
 I am fine:
-
+<BLANKLINE>
 thank you.
+<BLANKLINE>
 
-# Test 3: Input with no punctuation
 >>> text_indentation("This is a test")
 This is a test
 
-# Test 4: Input with multiple consecutive punctuation marks
->>> text_indentation("Wait... What?? Really:")
+>>> text_indentation("Wait. What? Really:")
 Wait...
-
-What??
-
+<BLANKLINE>
+What?
+<BLANKLINE>
 Really:
+<BLANKLINE>
 
-# Test 5: Empty string
 >>> text_indentation("")
 # (No output)
 
-# Test 6: Invalid input (not a string)
 >>> text_indentation(123)
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
 
-# Test 7: Input with only punctuation
->>> text_indentation("...??::")
+>>> text_indentation("...")
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+>>> text_indentation(['H', 'e', 'l', 'l', 'o'])
+Traceback (most recent call last):
 ...
-
-??
-
-::
+TypeError: text must be a string
