@@ -11,20 +11,20 @@ thank you.
 <BLANKLINE>
 
 >>> text_indentation("Hello . How are you ? I am fine : thank you .")
-Hello.
+Hello .
 <BLANKLINE>
-How are you?
+How are you ?
 <BLANKLINE>
-I am fine:
+I am fine :
 <BLANKLINE>
-thank you.
+thank you .
 <BLANKLINE>
 
 >>> text_indentation("This is a test")
 This is a test
 
 >>> text_indentation("Wait. What? Really:")
-Wait...
+Wait.
 <BLANKLINE>
 What?
 <BLANKLINE>
@@ -32,7 +32,6 @@ Really:
 <BLANKLINE>
 
 >>> text_indentation("")
-# (No output)
 
 >>> text_indentation(123)
 Traceback (most recent call last):
