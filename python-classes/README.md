@@ -1,0 +1,1 @@
+This is the project concerning the start of object-oriented programming, with a look on python classes
