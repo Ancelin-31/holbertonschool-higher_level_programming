@@ -1,0 +1,1 @@
+There is the project meaning to improve understanding of classes in Python
