@@ -80,4 +80,4 @@ class Rectangle:
 
     def __repr__(self):
         """Returns a string representation."""
-        return super.__repr__()
+        return super().__repr__()
