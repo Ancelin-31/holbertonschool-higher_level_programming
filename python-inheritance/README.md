@@ -1,0 +1,1 @@
+These are exercises meaning to teach about class inheritance in Python
