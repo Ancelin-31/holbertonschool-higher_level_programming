@@ -2,20 +2,7 @@
 """Create an empty class"""
 
 
-class BaseGeometry:
-    """Basic Geometry class"""
-
-    def area(self):
-        """Raises an exception"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """Checks if value is an integer"""
-
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
@@ -28,6 +15,6 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
         if not width:
-            raise AttributeError("'Rectangle' has no attribute {}".format(width))
+            raise AttributeError("'Rectangle'object has no attribute {}".format(width))
         if not height:
-            raise AttributeError("'Rectangle' has no attribute {}".format(height))
+            raise AttributeError("'Rectangle'object has no attribute {}".format(height))
