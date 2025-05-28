@@ -13,11 +13,9 @@ class BaseGeometry:
         """Checks if value is an integer"""
 
         if not isinstance(value, int):
-            raise TypeError("<name> must be an integer")
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("<name> must be greater than 0")
-        else:
-            return True
+            raise ValueError("{} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
@@ -28,3 +26,8 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
+
+        if not width:
+            raise AttributeError("'Rectangle' has no attribute {}".format(width))
+        if not height:
+            raise AttributeError("'Rectangle' has no attribute {}".format(height))
