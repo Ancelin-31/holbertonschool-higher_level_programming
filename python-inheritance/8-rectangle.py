@@ -13,8 +13,3 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-
-        if not width:
-            raise AttributeError("'Rectangle'object has no attribute {}".format(width))
-        if not height:
-            raise AttributeError("'Rectangle'object has no attribute {}".format(height))
