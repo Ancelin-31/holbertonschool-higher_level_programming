@@ -16,5 +16,5 @@ except Exception:
 
 item = sys.argv[1:]
 
-with open('add_item.json', 'r+', encoding="utf-8") as f:
+with open('add_item.json', 'w', encoding="utf-8") as f:
     save_item(item, filename)
