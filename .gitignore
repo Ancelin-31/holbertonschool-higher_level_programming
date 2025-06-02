@@ -1,3 +1,4 @@
 *.pyc
 *main*
-my_file_*.txt
+*.txt
+*.json
