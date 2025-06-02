@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Adds arguments in a Python list then saves it in a json representation"""
-import sys
 import json
+import sys
 
 
 save_item = __import__('5-save_to_json_file').save_to_json_file
