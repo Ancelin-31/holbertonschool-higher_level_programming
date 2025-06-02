@@ -7,12 +7,14 @@ import sys
 save_item = __import__('5-save_to_json_file').save_to_json_file
 load_item = __import__('6-load_from_json_file').load_from_json_file
 
+filename = 'add_item.json'
+
 try:
-    items_list = load_item('add_item.json')
+    items_list = load_item(filename)
 except Exception:
     items_list = []
 
 item = sys.argv[1:]
 
 with open('add_item.json', 'r+', encoding="utf-8") as f:
-    save_item(item, 'add_item.json')
+    save_item(item, filename)
