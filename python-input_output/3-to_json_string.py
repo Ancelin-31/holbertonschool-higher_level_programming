@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import json
 """Returns the JavaScript Object Notification of a file"""
+import json
 
 
 def to_json_string(my_obj):
