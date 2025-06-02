@@ -2,6 +2,7 @@
 """Creates a class Student"""
 import json
 
+to_json = __import__('8-class_to_json').class_to_json
 
 class Student:
     """Represents a student"""
@@ -20,4 +21,4 @@ class Student:
             raise ValueError('age must be more than zero')
 
     def to_json(self):
-        return self.__dict__
+        return to_json(self)
