@@ -6,7 +6,7 @@ import json
 def serialize_and_save_to_file(data, filename):
     """Serializes a dictionary and saves it in a json file"""
     with open(filename, 'w', encoding="utf-8") as f:
-        json.dumps(data, f)
+        json.dump(data, f)
 
 
 def load_and_deserialize(filename):
