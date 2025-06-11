@@ -28,7 +28,7 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(404, message="Not Found")
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write("Endpoint not found")
+            self.wfile.write(b"Endpoint not found")
 
 
 with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
