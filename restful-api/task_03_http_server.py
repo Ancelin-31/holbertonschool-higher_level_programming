@@ -29,7 +29,7 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
             self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(
-                b"404 Not Found: The requested resource was not found."
+                b"404 Not Found"
             )
 
 
