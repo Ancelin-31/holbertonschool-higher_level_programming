@@ -1,0 +1,1 @@
+These are exercises about API, and how to understand requests, posts, etc.
