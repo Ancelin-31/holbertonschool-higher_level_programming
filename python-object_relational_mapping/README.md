@@ -1,0 +1,1 @@
+Now, the project means to teach how to best use object-oriented mapping with SQL
