@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 const x = Number(process.argv[2]);
 const string = 'C is fun';
 
