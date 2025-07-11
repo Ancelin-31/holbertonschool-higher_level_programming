@@ -3,7 +3,7 @@
 const x = Number(process.argv[2]);
 const string = 'C is fun';
 
-if (!isNaN(x) && x > 0) {
+if (!isNaN(x)) {
   for (let i = 0; i < x; i++) {
     console.log(string);
   }
