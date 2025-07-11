@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const size = Number(process.argv[2]);
-const printSymbol = 'x';
+const printSymbol = 'X';
 
 if (!isNaN(size)) {
   for (let i = 0; i < size; i++) {
