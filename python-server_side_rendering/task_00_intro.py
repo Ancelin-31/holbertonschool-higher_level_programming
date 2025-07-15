@@ -1,4 +1,5 @@
 import os
+import logging
 
 def generate_invitations(template, attendees):
     
@@ -9,7 +10,8 @@ def generate_invitations(template, attendees):
         raise TypeError('Attendees must be a list of dictionaries')
     
     if not template.strip():
-        raise ValueError('Template is empty')
+        logging.error("Template is empty, no output files generated.")
+        return
     
     if not attendees:
         raise ValueError('No data given')
