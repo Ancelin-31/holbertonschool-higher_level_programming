@@ -1,7 +1,7 @@
 import os
 
 def generate_invitations(template, attendees):
-    if not os.path.exists('./template.txt'):
+    if not os.path.exists('template.txt'):
         raise ValueError('Template does not exist')
 
     if not template:
