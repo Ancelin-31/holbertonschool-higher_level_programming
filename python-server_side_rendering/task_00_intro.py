@@ -1,8 +1,6 @@
 import os
 
 def generate_invitations(template, attendees):
-    if not os.path.exists('template.txt'):
-        raise ValueError('Template does not exist')
 
     if not template:
         raise ValueError('No template given')
@@ -13,7 +11,7 @@ def generate_invitations(template, attendees):
     if not isinstance(attendees, list) or not all(isinstance(attendee, dict) for attendee in attendees):
         raise TypeError('Attendees must be a list of dictionaries')
     
-    if template.strip == "":
+    if template.strip() == "":
         raise ValueError('Template is empty')
     
     if not attendees:
