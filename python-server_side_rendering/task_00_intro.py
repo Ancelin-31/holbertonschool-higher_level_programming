@@ -1,4 +1,9 @@
+
+
 def generate_invitations(template, attendees):
+    if not template:
+        raise ValueError('No template given')
+    
     if not isinstance(template, str):
         raise TypeError('The template must be a string')
     
