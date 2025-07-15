@@ -4,17 +4,21 @@ import logging
 def generate_invitations(template, attendees):
     
     if not isinstance(template, str):
-        raise TypeError('The template must be a string')
+        logging.error("Invalid input: template must be a string.")
+        return
     
     if not isinstance(attendees, list) or not all(isinstance(attendee, dict) for attendee in attendees):
-        raise TypeError('Attendees must be a list of dictionaries')
+        logging.error("Invalid input: attendees must be a list of dictionaries.")
+        return
+
     
     if not template.strip():
         logging.error("Template is empty, no output files generated.")
         return
     
     if not attendees:
-        raise ValueError('No data given')
+        logging.error("No data provided, no output files generated.")
+        return
     
     for index, attendee in enumerate(attendees, start=1):
         invitation = template
@@ -26,7 +30,6 @@ def generate_invitations(template, attendees):
             invitation = invitation.replace('}', '')
             invitation = invitation.replace(key, value)
 
-        
         result = f'output_{index}.txt'
         try:
             with open(result, 'w') as file:
