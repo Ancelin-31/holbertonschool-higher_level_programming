@@ -23,7 +23,7 @@ def generate_invitations(template, attendees):
     for index, attendee in enumerate(attendees, start=1):
         invitation = template
         for key in {'name', 'event_title', 'event_date', 'event_location'}:
-            value = attendee.get(key, '')
+            value = attendee.get(key)
             if value == None:
                 value = 'N/A'
             invitation = invitation.replace('{', '')
