@@ -1,0 +1,1 @@
+This project teaches us how to use JavaScript to interact with CSS, HTML and modify the DOM.
