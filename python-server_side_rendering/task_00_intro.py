@@ -8,7 +8,7 @@ def generate_invitations(template, attendees):
     if not isinstance(attendees, list) or not all(isinstance(attendee, dict) for attendee in attendees):
         raise TypeError('Attendees must be a list of dictionaries')
     
-    if template.strip() == "":
+    if not template.strip():
         raise ValueError('Template is empty')
     
     if not attendees:
