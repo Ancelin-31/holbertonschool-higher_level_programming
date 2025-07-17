@@ -22,7 +22,7 @@ def items():
     try:
         with open(items_file, 'r', encoding='utf-8') as i:
             data = json.load(i)
-            items_array = data['items']
+            items_array = data.get("items")
         return render_template('items.html', list=items_array)
 
     except Exception as e:
