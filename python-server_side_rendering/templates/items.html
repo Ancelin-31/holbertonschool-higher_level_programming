@@ -1,5 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Items list
+    </title></head>
+<body>
 {% include 'header.html' %}
-<h1>Items List</h1>
 {% if list %}
 <ul>
     {% for item in list %}
@@ -10,3 +16,5 @@
 <p>No items found</p>
 {% endif %}
 {% include 'footer.html' %}
+</body>
+</html>
