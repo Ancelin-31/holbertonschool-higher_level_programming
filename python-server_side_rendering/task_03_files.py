@@ -69,7 +69,7 @@ def products():
                         else:
                             return render_template('product_display.html', message='Product not found')
             except Exception as e:
-                render_template('product_display.htmml', message=e)
+                render_template('product_display.html', message=e)
         else:
             try:
                 with open('products.csv', 'r', encoding='utf-8') as f:
