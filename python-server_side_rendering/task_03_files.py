@@ -37,11 +37,43 @@ def products():
     product_id = request.args.get('id')
     
     if source == 'json':
-        data = json.load(data)
+        if product_id:
+            try:
+                with open('products.json', 'r', encoding='utf-8') as f:
+                    data = json.loads(f.read())['products']
+                    print(data)
+                    for item in data:
+                        if item['id'] == product_id:
+                            return render_template('product_display.html', products=item)
+                        else:
+                            raise IndexError('Product not found')
+            except Exception as e:
+                return ('Error: {}'.format(e))
+        else:
+            try:
+                with open('products.json', 'r', encoding='utf-8') as f:
+                    data = json.loads(f.read())
+                    print(data)
+                    return render_template('product_display.html', products=data['products'])
+            except Exception as e:
+                return 'Error: {}'.format(e)
     elif source == 'csv':
-        data = csv.load(data)
+        if product_id:
+            try:
+                with open('products.csv', encoding='utf-8') as f:
+                    data = csv.DictReader(f)
+                    products_list = []
+                    for item in data:
+                        if item['id'] == product_id:
+                            products_list.append(item)
+                            print(products_list)
+                            return render_template('product_display.html', products=products_list)
+                        else:
+                            raise IndexError('Product not found')
+            except Exception as e:
+                return 'Error: {}'.format(e)
     else:
-        return
+        return ('Error: No source found')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
