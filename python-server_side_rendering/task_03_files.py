@@ -81,7 +81,7 @@ def products():
             except Exception as e:
                 return render_template('product_display.html', message=e)
     else:
-        return render_template('product_display.htmml', message='Wrong source')
+        return render_template('product_display.html', message='Wrong source')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
