@@ -35,28 +35,27 @@ def items():
 def products():
     source = request.args.get('source')
     product_id = request.args.get('id')
+    message = None
     
     if source == 'json':
         if product_id:
             try:
                 with open('products.json', 'r', encoding='utf-8') as f:
                     data = json.loads(f.read())['products']
-                    print(data)
                     for item in data:
                         if item['id'] == product_id:
                             return render_template('product_display.html', products=item)
                         else:
-                            raise IndexError('Product not found')
+                            return render_template('product_display.html', message='Product not found')
             except Exception as e:
-                return ('Error: {}'.format(e))
+                return render_template('product_display.html', message=e)
         else:
             try:
                 with open('products.json', 'r', encoding='utf-8') as f:
                     data = json.loads(f.read())
-                    print(data)
                     return render_template('product_display.html', products=data['products'])
             except Exception as e:
-                return 'Error: {}'.format(e)
+                return render_template('product_display.html', message=e)
     elif source == 'csv':
         if product_id:
             try:
@@ -66,12 +65,11 @@ def products():
                     for item in data:
                         if item['id'] == product_id:
                             products_list.append(item)
-                            print(products_list)
                             return render_template('product_display.html', products=products_list)
                         else:
-                            raise IndexError('Product not found')
+                            return render_template('product_display.html', message='Product not found')
             except Exception as e:
-                return 'Error: {}'.format(e)
+                render_template('product_display.htmml', message=e)
         else:
             try:
                 with open('products.csv', 'r', encoding='utf-8') as f:
@@ -81,9 +79,9 @@ def products():
                         products_list.append(item)
                     return render_template('product_display.html', products=products_list)
             except Exception as e:
-                return 'Error: {}'.format(e)
+                return render_template('product_display.html', message=e)
     else:
-        return ('Error: No source found')
+        return render_template('product_display.htmml', message='Wrong source')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

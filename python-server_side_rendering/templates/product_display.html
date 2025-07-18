@@ -5,12 +5,15 @@
 </head>
 <body>
 {% include 'header.html' %}
+{% if message %}
+<p>{{ message }}</p>
+{% else %}
 <table>
-    <tr><head>
+    <tr>
         <th>Name</th>
         <th>Category</th>
         <th>Price</th>
-    </head></tr>
+    </tr>
     {% for product in products%}
     <tr>
         <td>{{ product.name }}</td>
@@ -19,6 +22,7 @@
     </tr>
     {% endfor %}
 </table>
+{% endif %}
 {% include 'footer.html' %}
 </body>
 </html>
