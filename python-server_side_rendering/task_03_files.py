@@ -41,7 +41,7 @@ def products():
         if product_id:
             try:
                 with open('products.json', 'r', encoding='utf-8') as f:
-                    data = json.loads(f.read())['products']
+                    data = json.loads(f.read())
                     for item in data:
                         if item['id'] == product_id:
                             return render_template('product_display.html', products=item)
@@ -53,7 +53,7 @@ def products():
             try:
                 with open('products.json', 'r', encoding='utf-8') as f:
                     data = json.loads(f.read())
-                    return render_template('product_display.html', products=data['products'])
+                    return render_template('product_display.html', products=data)
             except Exception as e:
                 return render_template('product_display.html', message=e)
     elif source == 'csv':
