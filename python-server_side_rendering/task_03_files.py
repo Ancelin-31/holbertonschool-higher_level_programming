@@ -72,6 +72,16 @@ def products():
                             raise IndexError('Product not found')
             except Exception as e:
                 return 'Error: {}'.format(e)
+        else:
+            try:
+                with open('products.csv', 'r', encoding='utf-8') as f:
+                    data = csv.DictReader(f)
+                    products_list = []
+                    for item in data:
+                        products_list.append(item)
+                    return render_template('product_display.html', products=products_list)
+            except Exception as e:
+                return 'Error: {}'.format(e)
     else:
         return ('Error: No source found')
 
