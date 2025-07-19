@@ -80,19 +80,31 @@ def products():
                     return render_template('product_display.html', products=products_list)
             except Exception as e:
                 return render_template('product_display.html', message=e)
-    elif source=='sql':
-        connection = sqlite3.connect('products.db')
-        connection.row_factory = sqlite3.Row
-        cursor = connection.cursor()
-        cursor.execute("""
-            SELECT id, name, category, price
-            FROM Products
-        """)
-        result = cursor.fetchall()
-        connection.close()
-        return render_template('product_display.html', products = [dict(row) for row in result])
-    else:
-        return render_template('product_display.html', message='Wrong source')
+    elif source == 'sql':
+        try:
+            connection = sqlite3.connect('products.db')
+            connection.row_factory = sqlite3.Row
+            cursor = connection.cursor()
+
+            if product_id:
+                cursor.execute("SELECT * FROM products WHERE id = ?", (int(product_id),))
+                product = cursor.fetchone()
+                connection.close()
+                if product:
+                    return render_template('product_display.html', products=[dict(product)])
+                else:
+                    return render_template('product_display.html', message='Product not found')
+            else:
+                cursor.execute("SELECT id, name, category, price FROM products")
+                products = cursor.fetchall()
+                connection.close()
+
+                items = [dict(row) for row in products]
+            return render_template('product_display.html', products=items)
+    
+        except Exception as e:
+            return render_template('product_display.html', message=f"Error: {str(e)}")
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
