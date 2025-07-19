@@ -43,8 +43,8 @@ def products():
                 with open('products.json', 'r', encoding='utf-8') as f:
                     data = json.loads(f.read())
                     for item in data:
-                        if item['id'] == product_id:
-                            return render_template('product_display.html', products=item)
+                        if item['id'] == int(product_id):
+                            return render_template('product_display.html', products=[item])
                         else:
                             return render_template('product_display.html', message='Product not found')
             except Exception as e:
