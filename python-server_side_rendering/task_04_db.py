@@ -104,6 +104,8 @@ def products():
     
         except Exception as e:
             return render_template('product_display.html', message=f"Error: {str(e)}")
+    else:
+        return render_template('product_display.html', message='Wrong source')
 
 
 if __name__ == '__main__':
