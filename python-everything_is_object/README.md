@@ -25,7 +25,7 @@ print(id(y))    # Different now! Because integers are immutable
 
 The id() function returns a unique identifier for an object during its lifetime. When you assign one variable to another, you're just copying a reference — not cloning the object. But if you assign a new value, and the object is immutable, Python creates a new object instead.
 
-## Mutable Objects
+### Mutable Objects
 
 Mutable objects are those that can be changed after they are created. Lists, dictionaries, and sets are good examples. If two variables refer to the same mutable object, and one of them modifies it, the change is visible through the other.
 
@@ -40,7 +40,7 @@ print(id(a) == id(b))  # True – they are the same object
 
 Mutables can be dangerous if you’re not careful: modifying them in one place can have unexpected consequences elsewhere in your code.
 
-## Immutable Objects
+### Immutable Objects
 
 Immutable objects cannot be changed after they are created. Integers, floats, strings, and tuples are examples of this. Assigning a new value creates a new object, even if it looks like you’re “changing” a variable.
 
