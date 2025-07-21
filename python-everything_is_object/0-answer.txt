@@ -1,1 +1,1 @@
-printtype
+print type
