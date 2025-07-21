@@ -1,4 +1,4 @@
-![Python Mutable vs Immutable](https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg)  
+![Python Mutable vs Immutable](https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg)
 *Image source: [Wikipedia - Python Logo](https://en.wikipedia.org/wiki/File:Python-logo-notext.svg)*
 
 # Understanding Mutability in Python: What I Learned
